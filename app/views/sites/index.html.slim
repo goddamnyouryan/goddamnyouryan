@@ -1,0 +1,24 @@
+.intro
+  h1
+    'Goddamn You
+    .name Ryan MacInnes
+
+  h2 Pardon my French, I provide the internet sans bullshit.
+
+  p I'm a web designer and programmer from New York City. I make websites for myself,
+    or for you, for money. I work usually using #{link_to 'Rails', 'http://rubyonrails.org/'} with CSS3,
+    HTML5 and Javascript. This description of myself is starting to get long and boring
+    already. Why don't you read more #{link_to 'about me', '#'} or check out
+    #{link_to 'my blog', '#'} or scroll down to view my work.
+
+= link_to '#', class: 'down-arrow' do
+  i.icon-circle-arrow-down
+  span View my work
+
+ul#work
+  - @sites.each_with_index do |site, index|
+    = link_to site.url, target: '_blank' do
+      li style="color:#{site.text_color}; background:#{site.background_color};" data-site-name="#{site.name}" id="#{index + 1}"
+        = image_tag site.photo.url
+        h2 = site.name
+        p = site.description

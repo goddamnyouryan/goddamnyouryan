@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: goddamnyouryan_development
+  pool: 5
+  username: sharpei
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: goddamnyouryan_test
+  pool: 5
+  username: sharpei
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: goddamnyouryan_production
+  pool: 5
+  username: sharpei
+  password:
