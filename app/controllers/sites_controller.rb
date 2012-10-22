@@ -8,6 +8,10 @@ class SitesController < ApplicationController
 
   end
 
+  def sort
+
+  end
+
   def new
     @site = Site.new
   end

@@ -44,8 +44,7 @@ $item-height: 780px;
   color: $black;
   text-decoration: none;
   font: 300 15px/15px 'Helvetica', Arial, Sans-serif;
-  @include single-transition(color, 0.15s, linear);
-  @include background-clip(text);
+  @include single-transition(all, 0.15s, ease-in-out);
 
   i.icon-circle-arrow-down {
     font-size: 120px;
@@ -62,8 +61,16 @@ $item-height: 780px;
   }
 
   &.back-to-top {
-    @include single-transition(transform, 0.5s, ease-in-out);
+    @include transition-duration(0.5s);
     @include rotate(-180deg);
+  }
+
+  &.dark {
+    color: $white;
+
+    &:hover {
+      color: $orange;
+    }
   }
 }
 
@@ -72,21 +79,69 @@ ul#work {
   a {
     text-decoration: none;
 
+    &:nth-child(odd) {
+      img {
+        @include float-left;
+      }
+
+      .desc {
+        @include float-right;
+        text-align: left;
+        margin-left: 15px;
+      }
+    }
+
+    &:nth-child(even) {
+      img {
+        @include float-right;
+      }
+
+      .desc {
+        @include float-left;
+        text-align: right;
+        margin-right: 15px;
+      }
+    }
+
     li {
       height: $item-height;
 
-      img {
+      .meta {
+        width: 960px;
+        margin: 0 auto;
+        padding-top: 225px;
 
-      }
+        img {
+          width: 593px;
+        }
 
-      h2 {
-        font: $french;
-      }
+        .desc {
+          width: 352px;
 
-      p {
-        font: $description;
+          h2 {
+            font: $sitename;
+          }
 
+          p {
+            font: $description;
+          }
+        }
       }
     }
+  }
+}
+
+footer {
+  background-color: $black;
+  height: 80px;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  h1 {
+    font: $ryan;
+    font-size: 14px;
   }
 }

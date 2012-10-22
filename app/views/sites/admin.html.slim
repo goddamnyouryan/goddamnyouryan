@@ -1,9 +1,32 @@
+- content_for :head do
+  = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'
+
+javascript:
+  $(document).ready(function(){
+    $('ul#active').sortable({
+      axis: 'y',
+      dropOnEmpty: false,
+      cursor: 'crosshair',
+      items: 'li',
+      opacity: 0.4,
+      scroll: true,
+      update: function(){
+        $.ajax({
+          type: 'post',
+          data: $('#admin-videos').sortable('serialize'),
+          dataType: 'script',
+          url: "#{sort_path}"
+        })
+      }
+    });
+  });
+
 h1 Admin Interface
 =' link_to 'New Site', new_site_path
 = link_to 'Back to Home', root_path
 
 h2 Active Sites
-ul
+ul#active
   - Site.active.each do |site|
     li
       =' site.name

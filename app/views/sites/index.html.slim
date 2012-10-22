@@ -9,7 +9,8 @@
     or for you, for money. I work usually using #{link_to 'Rails', 'http://rubyonrails.org/'} with CSS3,
     HTML5 and Javascript. This description of myself is starting to get long and boring
     already. Why don't you read more #{link_to 'about me', '#'} or check out
-    #{link_to 'my blog', '#'} or scroll down to view my work.
+    #{link_to 'my blog', '#'} or scroll down to view my work. If you think I'm awesome you should
+    #{link_to 'hire me', '#'}.
 
 = link_to '#', class: 'down-arrow' do
   i.icon-circle-arrow-down
@@ -18,7 +19,9 @@
 ul#work
   - @sites.each_with_index do |site, index|
     = link_to site.url, target: '_blank' do
-      li style="color:#{site.text_color}; background:#{site.background_color};" data-site-name="#{site.name}" id="#{index + 1}"
-        = image_tag site.photo.url
-        h2 = site.name
-        p = site.description
+      li style="color:#{site.text_color}; background:#{site.background_color};" data-site-name="#{site.name}" id="#{index + 1}" class="#{site.dark? ? 'dark': 'light' }"
+        .meta
+          = image_tag site.photo.url
+          .desc
+            h2 = site.name
+            p = site.description

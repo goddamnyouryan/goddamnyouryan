@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001044042) do
+ActiveRecord::Schema.define(:version => 20121003045939) do
 
   create_table "sites", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20121001044042) do
     t.datetime "photo_updated_at"
     t.string   "background_color"
     t.string   "text_color"
+    t.boolean  "dark"
   end
 
 end
