@@ -168,6 +168,7 @@ ul#work {
         text-align: left;
 
         p {
+          @include font(300, 15px, 36px, $sans);
           margin-bottom: 25px;
 
           input[type=text] {
