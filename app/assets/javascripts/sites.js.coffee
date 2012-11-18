@@ -1,10 +1,14 @@
 $(document).ready ->
 
+  $("a[rel*=external]").click (e) ->
+    window.open $(this).attr("href")
+    e.preventDefault()
+
   nextSite = $('#1')
 
   $('.down-arrow').click (e) ->
    e.preventDefault()
-   $('html,body').animate({scrollTop: nextSite.offset().top}, 500)
+   $('html,body').animate({scrollTop: nextSite.offset().top},{easing: 'swing', duration: 500})
 
   $('ul#work li').waypoint (event, direction) ->
     nextId = parseInt($(@).attr('id'))
@@ -31,7 +35,7 @@ $(document).ready ->
         $('.down-arrow').removeClass('dark')
     $('.down-arrow span').html(label)
   ,
-    offset: 640
+    offset: 660
 
   $('ul#work li:first').waypoint (event, direction)->
     if direction == 'up'

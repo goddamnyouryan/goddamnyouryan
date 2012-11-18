@@ -9,8 +9,9 @@
     or for you, for money. I work usually using #{link_to 'Rails', 'http://rubyonrails.org/'} with CSS3,
     HTML5 and Javascript. This description of myself is starting to get long and boring
     already. Why don't you read more #{link_to 'about me', '#'} or check out
-    #{link_to 'my blog', '#'} or scroll down to view my work. If you think I'm awesome you should
-    #{link_to 'hire me', '#'}.
+    #{link_to 'my blog', blog_index_path} or scroll down to view my work. You could also check out my
+    #{link_to 'Github', 'http://www.github.com/goddamnyouryan'} if you were so inclined.
+    If you think I'm awesome you should #{link_to 'hire me', '#'}.
 
 = link_to '#', class: 'down-arrow' do
   i.icon-circle-arrow-down
@@ -18,10 +19,43 @@
 
 ul#work
   - @sites.each_with_index do |site, index|
-    = link_to site.url, target: '_blank' do
-      li style="color:#{site.text_color}; background:#{site.background_color};" data-site-name="#{site.name}" id="#{index + 1}" class="#{site.dark? ? 'dark': 'light' }"
-        .meta
-          = image_tag site.photo.url
-          .desc
-            h2 = site.name
-            p = site.description
+      li style="background: #{site.background_color};" data-site-name="#{site.name}" id="#{index + 1}" class="#{site.dark? ? 'dark': 'light' }"
+        = link_to site.url, rel: 'external' do
+          .site style="color: #{site.text_color}"
+            .meta
+              h2 = site.name
+              p = site.description
+            = image_tag site.photo.url
+  li data-site-name='About Ryan' id="#{@sites.count + 1}" class='light about'
+    h1 Just a 'lil bit about Ryan MacInnes...
+    .bio
+      = image_tag 'ryan.png'
+      p I made my very first website when I was 14. It was absolutely terrible. I've been making websites ever since, some of which are slightly better.
+        I doubled majored in Environmental Biology and Microbiology in college, which has done exactly zero for me career-wise. Once I graduated
+        I moved to LA and got back into making websites. In 2009 I started working for Sony Pictures as a project manager, making websites freelance
+        on the side. In early 2012 I started working at #{link_to 'GOOD', 'http://www.good.is'} as a software engineer. I also moved to New York City.
+        I started working in Rails in late 2007. Now I work in it almost exclusively, along with HTML5, CSS3, Javascript (jQuery of course)
+        with a litle bit of Backbone all using TDD. I'm also not bad in Python, Bash and I'm teaching myself C at the the moment. I'm the best at creating your MVP,
+        making your idea into a reality, as cliche as that sounds. I'm an okay designer, I like
+        photoshop and not illustrator. I love learning new things and I love taking on challenges. I especially love getting paid to do both. So #{link_to 'do it', '#'} already!
+
+  li data-site-name='Contact Me' id="#{@sites.count + 2}" class='dark contact'
+    h1 Contact Me
+    h2 I promise I'll get back to you. Unless you're a spam robot.
+    = form_tag '/contact' do
+      p
+        = label_tag :name
+        br
+        = text_field_tag :name
+
+      p
+        = label_tag :email, 'Email Address'
+        br
+        = text_field_tag :email
+
+      p
+        = label_tag :body, 'What do you want?'
+        br
+        = text_area_tag :body
+
+      p = submit_tag 'Send'

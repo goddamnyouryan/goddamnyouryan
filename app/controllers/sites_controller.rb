@@ -1,15 +1,11 @@
 class SitesController < ApplicationController
   http_basic_authenticate_with :name => 'ryan', :password => 'poophorsebananaschema', except: :index
+
   def index
     @sites = Site.active
   end
 
   def admin
-
-  end
-
-  def sort
-
   end
 
   def new
@@ -40,5 +36,12 @@ class SitesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def sort
+    params[:site].each_with_index do |id, index|
+      Site.update_all({position: index + 1}, { id: id })
+    end
+    render nothing: true
   end
 end

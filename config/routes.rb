@@ -1,7 +1,9 @@
 Goddamnyouryan::Application.routes.draw do
-  resources :sites
+  resources :sites do
+    collection { post :sort }
+  end
+  resources :blog
   match '/admin', to: 'sites#admin'
-  match '/sort', to: 'sites#sort'
 
   root :to => 'sites#index'
 end

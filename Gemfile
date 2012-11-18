@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'slim-rails'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'friendly_id'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

@@ -1,13 +1,12 @@
 @import "compass/css3/font-face";
 $serif: 'Georgia', Serif;
 $sans: 'Helvetica', Arial, Sans-Serif;
-
-$goddamn: 300 18px/14px $sans;
-$ryan: 400 87px/84px $serif;
-$french: 300 24px/14px $sans;
-$sitename: 400 48px/64px $serif;
-$description: 300 15px/24px $sans;
 $fontAwesomePath: "fontawesome-webfont" !default;
+
+@mixin font($weight, $size, $leading, $font-family) {
+  font: $weight #{$size}/#{$leading} $font-family;
+  -webkit-font-smoothing: antialiased;
+}
 
 @include font-face(
     'FontAwesome',
