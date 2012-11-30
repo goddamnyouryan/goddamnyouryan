@@ -55,11 +55,11 @@ ul#work
   li#contact
     h1 Contact Me
     h2 I promise I'll get back to you. Unless you're a spam robot.
-    = form_tag '/contact' do
+    = form_tag '/contact', remote: true, class: 'contact' do
       p = text_field_tag :name, nil, placeholder: 'What\'s your name?'
 
       p = text_field_tag :email, nil, placeholder: 'And your email address'
 
       p = text_area_tag :body, nil, placeholder: 'What do you want?'
 
-      p = submit_tag 'Shoot'
+      p = submit_tag 'Shoot', class: 'submit', disable_with: 'It\'s a go! Please hold.'

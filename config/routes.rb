@@ -4,6 +4,7 @@ Goddamnyouryan::Application.routes.draw do
   end
   resources :blog
   match '/admin', to: 'sites#admin'
+  match '/contact', to: 'sites#contact'
 
   root :to => 'sites#index'
 end

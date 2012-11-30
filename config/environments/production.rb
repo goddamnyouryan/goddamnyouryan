@@ -67,4 +67,16 @@ Goddamnyouryan::Application.configure do
 
   # Make slims indenting purdy
   Slim::Engine.set_default_options pretty: true, sort_attrs: false
+
+  # Mailer Settings
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.sendgrid.net",
+    :port                 => 587,
+    :domain               => 'goddamnyouryan.com',
+    :user_name            => 'ryan.macinnes@gmail.com',
+    :password             => 'garbage',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
+  config.action_mailer.default_url_options = { :host => 'goddamnyouryan.com' }
 end

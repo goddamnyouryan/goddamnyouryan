@@ -213,9 +213,18 @@ ul#work {
         margin: 0 auto;
         text-align: left;
 
+        label {
+          @include font(300, 15px, 23px, $sans);
+          display: block;
+          text-align: center;
+          color: $error;
+          margin-bottom: 25px;
+        }
+
         p {
           @include font(300, 15px, 36px, $sans);
           margin-bottom: 25px;
+
 
           input[type=text] {
             background: $white;
@@ -223,6 +232,7 @@ ul#work {
             width: 380px;
             padding: 10px;
 
+            &.error { outline: 1px solid $error; }
           }
 
           textarea {
@@ -233,6 +243,8 @@ ul#work {
             width: 380px;
             height: 100px;
             resize: none;
+
+            &.error { outline: 1px solid $error; }
           }
 
           input[type=submit] {
@@ -251,6 +263,13 @@ ul#work {
             &:active {
               @include background(linear-gradient(top, darken($highlight, 27%), darken($highlight, 27%) 50%, darken($highlight, 30%) 51%, darken($highlight, 30%) 100%));
             }
+          }
+
+          .notification {
+            text-align: center;
+            font-size: 13px;
+            padding: 8px;
+            background: lighten($highlight, 20%);
           }
         }
       }
