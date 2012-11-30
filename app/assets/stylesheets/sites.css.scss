@@ -9,20 +9,69 @@ $item-height: 780px;
 
   h1 {
     @include font(300, 24px, 14px, $sans);
+    color: $highlight;
     width: $header-width;
+    position: relative;
+    left: 10px;
     margin: 0 auto;
     padding-top: 200px;
 
     .name {
       @include font(400, 87px, 84px, $serif);
+      margin: 10px 0 0 -10px;
       color: $black;
     }
   }
 
   h2 {
     @include font(300, 24px, 14px, $sans);
+    color: $highlight;
     width: $header-width;
     margin: 32px auto;
+  }
+
+  nav#sites {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+
+    ul {
+
+      li {
+        margin-bottom: 30px;
+
+        a {
+          @include font(300, 11px, 16px, $sans);
+          @include single-transition(all, 0.2s, ease-in-out);
+          text-decoration: none;
+          color: $transparent-black;
+          position: relative;
+          padding-left: 10px;
+
+          &:before {
+            content: '';
+            background: $gray;
+            position: absolute;
+            display: block;
+            left: -15px;
+            top: -2px;
+            width: 15px;
+            height: 15px;
+          }
+
+          &.current {
+
+            &:before { background: $black; }
+          }
+
+          &:hover {
+            color: $black;
+
+            &:before { background: $black; }
+          }
+        }
+      }
+    }
   }
 
   p {
@@ -31,46 +80,12 @@ $item-height: 780px;
     margin: 0 auto;
 
     a {
-      color: $orange;
+      color: $highlight;
     }
   }
-}
 
-.down-arrow {
-  position: fixed;
-  width: 250px;
-  right: 10px;
-  bottom: 80px;
-  color: $black;
-  text-decoration: none;
-  @include font(300, 15px, 15px, $sans);
-  @include single-transition(all, 0.15s, ease-in-out);
-
-  i.icon-circle-arrow-down {
-    font-size: 120px;
-  }
-
-  span {
-    position: relative;
-    top: -18px;
-    margin-left: 15px;
-  }
-
-  &:hover {
-    color: $orange;
-  }
-
-  &.back-to-top {
-    @include transition-duration(0.5s);
-    @include rotate(-180deg);
-  }
-
-  &.dark {
-    color: $white;
-
-    &:hover {
-      color: $orange;
-    }
+  nav#links {
+    display: none;
   }
 }
 
@@ -80,11 +95,27 @@ ul#work {
     height: $item-height;
     @include clearfix;
 
+    &:nth-child(even) {
+      background: $white;
+
+      a {
+        color: $highlight;
+      }
+    }
+
+    &:nth-child(odd) {
+      background: $highlight;
+
+      a {
+        color: $white;
+      }
+    }
+
     a {
       text-decoration: none;
 
       .site {
-        width: 1280px;
+        width: 1095px;
         margin: 0 auto;
         padding-top: 185px;
 
@@ -99,19 +130,34 @@ ul#work {
           }
 
           p {
-            @include font(300, 15px, 24px, $serif);
+            @include font(300, 15px, 24px, $sans);
             width: 300px;
           }
         }
 
-        img {
+        .imac {
           @include float-left;
-          width: 820px;
+          position: relative;
+
+          img {
+
+            &:nth-child(1) {
+
+            }
+
+            &:nth-child(2) {
+              position: absolute;
+              left: 25px;
+              top: 29px;
+              height: 326px;
+              width: 584px;
+            }
+          }
         }
       }
     }
 
-    &.about {
+    &#about {
       background: $white;
       color: $black;
       text-align: center;
@@ -133,22 +179,22 @@ ul#work {
 
         p {
           @include float-left;
-          @include font(400, 15px, 26px, $serif);
+          @include font(300, 15px, 26px, $sans);
           text-align: left;
           width: 610px;
 
           &:first-child { margin-right: 25px; }
 
           a {
-            color: $orange;
+            color: $highlight;
             text-decoration: underline;
           }
         }
       }
     }
 
-    &.contact {
-      background: $black;
+    &#contact {
+      background: $highlight;
       color: $white;
       text-align: center;
 
@@ -191,19 +237,19 @@ ul#work {
 
           input[type=submit] {
             @include font(600, 18px, 28px, $serif);
+            @include background(linear-gradient(top, darken($highlight, 17%), darken($highlight, 17%) 50%, darken($highlight, 20%) 51%, darken($highlight, 20%) 100%));
             width: 400px;
             padding: 10px 0;
             border: none;
-            background: $orange;
             color: $white;
             cursor: pointer;
 
             &:hover {
-              background: darken($orange, 5%);
+              @include background(linear-gradient(top, darken($highlight, 22%), darken($highlight, 22%) 50%, darken($highlight, 25%) 51%, darken($highlight, 25%) 100%));
             }
 
             &:active {
-              background: darken($orange, 10%);
+              @include background(linear-gradient(top, darken($highlight, 27%), darken($highlight, 27%) 50%, darken($highlight, 30%) 51%, darken($highlight, 30%) 100%));
             }
           }
         }

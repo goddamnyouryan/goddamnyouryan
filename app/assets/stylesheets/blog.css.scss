@@ -4,7 +4,7 @@
   font-family: $serif;
   padding: 50px 0;
 
-  a { color: $orange; }
+  a { color: $highlight; }
 
   h1 {
     @include font(400, 87px, 108px, $serif);
@@ -15,7 +15,7 @@
       text-decoration: none;
 
       &:hover {
-        color: $orange;
+        color: $highlight;
       }
     }
   }
@@ -39,7 +39,7 @@
           color: $black;
           text-decoration: none;
 
-          &:hover { color: $orange }
+          &:hover { color: $highlight; }
         }
       }
 

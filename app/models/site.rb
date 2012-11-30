@@ -1,5 +1,9 @@
 class Site < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   attr_accessible :description, :name, :order, :status, :url, :photo, :background_color, :text_color, :dark
+
 
   has_attached_file :photo, styles: { list: "960x480#" },
                             storage: :s3, s3_credentials: "#{Rails.root}/config/s3.yml",

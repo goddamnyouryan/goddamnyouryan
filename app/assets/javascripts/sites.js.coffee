@@ -1,44 +1,25 @@
-$(document).ready ->
+jQuery ->
 
   $("a[rel*=external]").click (e) ->
     window.open $(this).attr("href")
     e.preventDefault()
 
-  nextSite = $('#1')
-
-  $('.down-arrow').click (e) ->
+  $('nav#sites li a, a.hire').click (e) ->
    e.preventDefault()
-   $('html,body').animate({scrollTop: nextSite.offset().top},{easing: 'swing', duration: 500})
+   target = $("#{$(@).attr('href')}").offset().top
+   $('html,body').animate({scrollTop: target},{easing: 'swing', duration: 500})
 
   $('ul#work li').waypoint (event, direction) ->
-    nextId = parseInt($(@).attr('id'))
+    $('nav#sites ul li a').removeClass('current')
+    slug = $(@).attr('id')
+    nav = $("nav#sites ul li a.#{slug}")
     if direction == 'down'
-      nextId++
-      if $(@).hasClass('dark')
-        $('.down-arrow').addClass('dark')
-      else
-        $('.down-arrow').removeClass('dark')
-    if nextId == $('ul#work li').length + 1
-      nextSite = $('.intro')
-      $('.down-arrow').addClass('back-to-top')
-      label = 'Back to Top'
+      nav.addClass('current')
     else
-      nextSite = $("##{nextId}")
-      label = nextSite.data('site-name')
-      $('.down-arrow').removeClass('back-to-top')
-    if direction == 'up'
-      nextId--
-      prevSite = $("##{nextId}")
-      if prevSite.hasClass('dark')
-        $('.down-arrow').addClass('dark')
-      else
-        $('.down-arrow').removeClass('dark')
-    $('.down-arrow span').html(label)
-  ,
-    offset: 660
+      nav.parent().prev().find('a').addClass('current')
 
-  $('ul#work li:first').waypoint (event, direction)->
-    if direction == 'up'
-      $('.down-arrow').removeClass('back-to-top')
-      $('.down-arrow').removeClass('dark')
-      $('.down-arrow span').html('View my work')
+  $('#intro').waypoint ->
+    $('nav#sites ul li a').removeClass('current')
+    $('nav#sites ul li a:first').addClass('current')
+  ,
+    offset: -30
