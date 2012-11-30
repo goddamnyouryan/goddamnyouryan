@@ -5,32 +5,33 @@ coffee:
       update: ->
         $.post($(this).data('update-url'), $(this).sortable('serialize'))
 
-h1 Admin Interface
-=' link_to 'New Site', new_site_path
-=' link_to 'New Blog Post', new_blog_path
-= link_to 'Back to Home', root_path
+#admin
+  h1 Admin Interface
+  =' link_to 'New Site', new_site_path
+  =' link_to 'New Blog Post', new_blog_path
+  = link_to 'Back to Home', root_path
 
-h2 Active Sites
-ul#active.sort data-update-url="#{sort_sites_url}"
-  - Site.active.each do |site|
-    = content_tag_for :li, site do
-      =' site.name
-      =' link_to 'edit', edit_site_path(site)
-      = link_to 'deactivate', site_path(site, status: 'inactive'), method: :put
-
-- if Site.inactive.any?
-  h2 Inactive Sites
-  ul
-    - Site.inactive.each do |site|
-      li
+  h2 Active Sites
+  ul#active.sort data-update-url="#{sort_sites_url}"
+    - Site.active.each do |site|
+      = content_tag_for :li, site do
         =' site.name
-        =' link_to 'delete', site_path(site), method: :delete, confirm: 'Are you sure you want to delete this site?'
-        = link_to 're-activate', site_path(site, status: 'active'), method: :put
+        =' link_to 'edit', edit_site_path(site)
+        = link_to 'deactivate', site_path(site, status: 'inactive'), method: :put
 
-h2 Blog Posts
-ul
-  - Blog.all.each do |blog|
-    li
-      =' blog.title
-      =' link_to 'edit', edit_blog_path(blog)
-      = link_to 'delete', blog, method: :delete
+  - if Site.inactive.any?
+    h2 Inactive Sites
+    ul
+      - Site.inactive.each do |site|
+        li
+          =' site.name
+          =' link_to 'delete', site_path(site), method: :delete, confirm: 'Are you sure you want to delete this site?'
+          = link_to 're-activate', site_path(site, status: 'active'), method: :put
+
+  h2 Blog Posts
+  ul
+    - Blog.all.each do |blog|
+      li
+        =' blog.title
+        =' link_to 'edit', edit_blog_path(blog)
+        = link_to 'delete', blog, method: :delete
