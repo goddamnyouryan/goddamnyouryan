@@ -1,0 +1,67 @@
+@media screen and (max-width: 320px) {
+
+}
+
+@media screen and (max-width: 480px) {
+
+}
+
+@media all and (max-width: 600px) {
+
+}
+
+@media all and (max-width: 801px) {
+
+}
+
+@media all and (max-width: 1025px) {
+
+}
+
+@media all and (max-width: 1095px) {
+
+  ul#work {
+
+    li {
+      overflow: visible;
+      height: auto;
+
+      a {
+
+        .site {
+          width: 100%;
+
+          .meta {
+            float: none;
+            width: auto;
+
+            h2 {
+              text-align: center;
+            }
+
+            p {
+              margin: 0 auto 25px;
+              text-align: center;
+              width: 50%;
+            }
+          }
+
+          .imac {
+            float: none;
+
+            img {
+
+              &:nth-child(1) {
+                position: absolute;
+              }
+
+              &:nth-child(2) {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
