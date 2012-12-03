@@ -8,7 +8,7 @@ $item-height: 780px;
   $header-width: 601px;
 
   h1 {
-    @include font(300, 24px, 14px, $sans);
+    @include font(300, 24px, 32px, $sans);
     color: $highlight;
     width: $header-width;
     position: relative;
@@ -17,14 +17,14 @@ $item-height: 780px;
     padding-top: 200px;
 
     .name {
-      @include font(400, 87px, 84px, $serif);
+      @include font(400, 87px, 102px, $serif);
       margin: 10px 0 0 -10px;
       color: $black;
     }
   }
 
   h2 {
-    @include font(300, 24px, 14px, $sans);
+    @include font(300, 24px, 32px, $sans);
     color: $highlight;
     width: $header-width;
     margin: 32px auto;
@@ -231,6 +231,7 @@ ul#work {
             color: $black;
             width: 380px;
             padding: 10px;
+            border: none;
 
             &.error { outline: 1px solid $error; }
           }

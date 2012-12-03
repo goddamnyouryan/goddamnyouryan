@@ -1,35 +1,35 @@
-@media screen and (max-width: 320px) {
+@media all and (max-width: 1150px) {
 
-}
+  .intro {
+    height: 475px;
 
-@media screen and (max-width: 480px) {
+    h1 {
+      padding-top: 50px;
 
-}
+      .name {
 
-@media all and (max-width: 600px) {
+      }
+    }
 
-}
+    h2 {
 
-@media all and (max-width: 801px) {
+    }
 
-}
+    p {
 
-@media all and (max-width: 1025px) {
-
-}
-
-@media all and (max-width: 1095px) {
+    }
+  }
 
   ul#work {
 
     li {
-      overflow: visible;
-      height: auto;
+      height: 800px;
 
       a {
 
         .site {
           width: 100%;
+          padding-top: 50px;
 
           .meta {
             float: none;
@@ -42,26 +42,275 @@
             p {
               margin: 0 auto 25px;
               text-align: center;
-              width: 50%;
+              width: 600px;
             }
           }
 
           .imac {
             float: none;
+            display: block;
+            width: 633px;
+            margin: 0 auto;
 
             img {
 
               &:nth-child(1) {
                 position: absolute;
               }
+            }
+          }
+        }
+      }
+
+      &#contact {
+        height: 500px;
+        padding-top: 50px;
+
+        h1 {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1000px) {
+
+  ul#work {
+
+    li#about {
+      height: auto;
+
+      h1 {
+        padding-top: 50px;
+        width: 80%;
+        margin: 0 auto 50px;
+      }
+
+      .bio {
+        width: 100%;
+
+        img {
+          float: none;
+          display: block;
+          width: 300px;
+          margin: 0 auto 25px;
+        }
+
+        p {
+          float: none;
+          display: block;
+          width: 80%;
+          margin: 0 auto 50px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 801px) {
+
+  .intro {
+    $header-width: 400px;
+
+    h1 {
+      width: $header-width;
+
+      .name {
+        @include font(400, 60px, 72px, $serif);
+        margin-top: 0;
+      }
+    }
+
+    h2 {
+      width: $header-width;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    p {
+      width: $header-width;
+    }
+  }
+
+  ul#work {
+
+    li {
+      height: 625px;
+
+      a {
+
+        .site {
+
+          .meta {
+
+            h2 {
+
+            }
+
+            p {
+              width: 400px;
+            }
+          }
+
+          .imac {
+            width: 400px;
+
+            img {
+
+              &:nth-child(1) {
+                width: 400px;
+              }
 
               &:nth-child(2) {
-
+                left: 16px;
+                top: 19px;
+                width: 370px;
+                height: 206px;
               }
+            }
+          }
+        }
+      }
+
+      &#about {
+
+        h1 {
+          @include font(400, 32px, 48px, $serif);
+        }
+
+        .bio {
+
+          img {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .intro {
+    $header-width: 300px;
+    height: 450px;
+
+    h1 {
+      @include font(300, 20px, 28px, $sans);
+      width: $header-width;
+
+      .name {
+        @include font(400, 46px, 54px, $serif);
+      }
+    }
+
+    h2 {
+      @include font(300, 20px, 28px, $sans);
+      width: $header-width;
+      margin: 10px auto;
+    }
+
+    p {
+      width: $header-width;
+    }
+  }
+
+  ul#work {
+
+    li {
+      height: 575px;
+
+      a {
+
+        .site {
+
+          .meta {
+
+            h2 {
+              @include font(400, 32px, 40px, $serif);
+              width: 300px;
+              margin: 0 auto 25px;
+            }
+
+            p {
+              width: 300px;
+            }
+          }
+
+          .imac {
+            width: 300px;
+
+            img {
+
+              &:nth-child(1) {
+                width: 300px;
+              }
+
+              &:nth-child(2) {
+                left: 12px;
+                top: 14px;
+                width: 277px;
+                height: 156px;
+              }
+            }
+          }
+        }
+      }
+
+      &#about {
+
+        h1 {
+          @include font(400, 32px, 48px, $serif);
+        }
+
+        .bio {
+
+          img {
+            width: 200px;
+          }
+
+          p {
+            width: 70%;
+          }
+        }
+      }
+
+      &#contact {
+        height: 450px;
+
+        h1 {
+          @include font(400, 32px, 40px, $serif);
+        }
+
+        h2 {
+          @include font(400, 11px, 17px, $sans);
+          width: 300px;
+          margin: 10px auto;
+        }
+
+        form {
+          width: 100%;
+
+          p {
+
+            input[type=text], input[type=submit], textarea {
+              width: 70%;
+              margin: 0 auto 15px;
+              display: block;
+              padding: 10px;
+            }
+
+            input[type=submit] {
+              width: 75%;
             }
           }
         }
       }
     }
   }
+}
+
+@media screen and (max-width: 320px) {
+
 }
