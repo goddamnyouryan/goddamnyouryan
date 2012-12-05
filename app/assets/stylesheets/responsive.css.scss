@@ -214,6 +214,8 @@
     p {
       width: $header-width;
     }
+
+    nav#sites { display: none; }
   }
 
   ul#work {
