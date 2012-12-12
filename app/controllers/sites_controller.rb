@@ -1,8 +1,9 @@
 class SitesController < ApplicationController
-  http_basic_authenticate_with :name => 'ryan', :password => 'poophorsebananaschema', except: [:index, :contact]
+  http_basic_authenticate_with :name => 'ryan', :password => 'poophorsebananaschema', except: :index
 
   def index
     @sites = Site.active
+    @message = Message.new
   end
 
   def admin
@@ -43,12 +44,5 @@ class SitesController < ApplicationController
       Site.update_all({position: index + 1}, { id: id })
     end
     render nothing: true
-  end
-
-  def contact
-    SitesMailer.contact_form(params[:name], params[:email], params[:body]).deliver
-    respond_to do |format|
-      format.js
-    end
   end
 end

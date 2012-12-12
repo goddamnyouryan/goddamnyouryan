@@ -35,3 +35,13 @@ coffee:
         =' blog.title
         =' link_to 'edit', edit_blog_path(blog)
         = link_to 'delete', blog, method: :delete
+
+  h2 Messages
+  ul
+    - Message.all.each do |message|
+      li
+        = message.name
+        br
+        = link_to message.email, "mailto:#{message.email}"
+        br
+        = message.body

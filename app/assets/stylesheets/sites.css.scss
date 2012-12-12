@@ -226,7 +226,7 @@ ul#work {
           margin-bottom: 25px;
 
 
-          input[type=text] {
+          input[type=text], input[type=email] {
             background: $white;
             color: $black;
             width: 380px;

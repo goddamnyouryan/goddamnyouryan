@@ -3,8 +3,8 @@ Goddamnyouryan::Application.routes.draw do
     collection { post :sort }
   end
   resources :blog
+  resources :messages, only: :create
   match '/admin', to: 'sites#admin'
-  match '/contact', to: 'sites#contact'
 
   root :to => 'sites#index'
 end
