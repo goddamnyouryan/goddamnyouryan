@@ -222,11 +222,12 @@ ul#work {
         }
 
         p {
-          @include font(300, 15px, 36px, $sans);
           margin-bottom: 25px;
 
 
           input[type=text], input[type=email] {
+            @include font(300, 15px, 24px, $sans);
+            @include placeholder(lighten($black, 40%));
             background: $white;
             color: $black;
             width: 380px;
@@ -237,6 +238,8 @@ ul#work {
           }
 
           textarea {
+            @include font(300, 15px, 24px, $sans);
+            @include placeholder(lighten($black, 40%));
             background: $white;
             color: $black;
             border: none;
@@ -290,5 +293,12 @@ ul#work {
     margin: 25px 0;
     font-size: 18px;
     font-weight: bold;
+  }
+
+  ul#messages {
+
+    li {
+      margin-bottom: 15px;
+    }
   }
 }

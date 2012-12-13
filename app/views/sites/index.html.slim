@@ -58,7 +58,7 @@ ul#work
     = form_for @message, remote: true, class: 'contact' do |f|
       p = f.text_field :name, placeholder: 'What\'s your name?'
 
-      p = f.email_field :email, placeholder: 'And your email address'
+      p = f.email_field :email, placeholder: 'And your email address?'
 
       p = f.text_area :body, placeholder: 'What do you want?'
 

@@ -37,7 +37,7 @@ coffee:
         = link_to 'delete', blog, method: :delete
 
   h2 Messages
-  ul
+  ul#messages
     - Message.all.each do |message|
       li
         = message.name
