@@ -6,6 +6,12 @@ urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'
     changefreq monthly
     priority 0.8
 
+  url
+    loc http://goddamnyouryan.com/blog
+    lastmod = Time.now.strftime('%Y-%m-%d')
+    changefreq weekly
+    priority 0.7
+
   - Blog.all.each do |blog|
     url
       loc http://goddamnyouryan.com#{blog_path(blog)}
