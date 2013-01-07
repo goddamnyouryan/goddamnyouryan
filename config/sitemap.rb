@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.goddamnyouryan.com"
+SitemapGenerator::Sitemap.default_host = "http://goddamnyouryan.com"
 
 SitemapGenerator::Sitemap.create do
   add '/blog'
