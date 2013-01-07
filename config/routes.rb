@@ -1,5 +1,5 @@
 Goddamnyouryan::Application.routes.draw do
-  resources :sites do
+  resources :sites, except: :show do
     collection { post :sort }
   end
   resources :blog
