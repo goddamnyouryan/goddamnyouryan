@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
-  http_basic_authenticate_with :name => 'ryan', :password => 'poophorsebananaschema', except: :index
+  http_basic_authenticate_with name: 'ryan', password: 'poophorsebananaschema', except: [:index, :sitemap]
 
   def index
     @sites = Site.active
@@ -44,5 +44,9 @@ class SitesController < ApplicationController
       Site.update_all({position: index + 1}, { id: id })
     end
     render nothing: true
+  end
+
+  def sitemap
+
   end
 end
