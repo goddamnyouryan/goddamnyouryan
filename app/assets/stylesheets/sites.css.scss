@@ -270,9 +270,9 @@ ul#work {
           }
 
           .notification {
+            @include font(300, 12px, 16px, $sans);
             text-align: center;
-            font-size: 13px;
-            padding: 8px;
+            padding: 20px;
             background: lighten($highlight, 20%);
           }
         }
