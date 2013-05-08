@@ -62,5 +62,17 @@ module Goddamnyouryan
     # Dealing with non www requests
     config.autoload_paths += %W(#{config.root}/lib)
     config.middleware.use "NoWww"
+
+    # Mailer Settings
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.mandrillapp.com",
+      :port                 => 587,
+      :domain               => 'goddamnyouryan.com',
+      :user_name            => 'ryan.macinnes@gmail.com',
+      :password             => '7VTnzFToJEDJZPByO9iEIA',
+      :authentication       => 'plain',
+      :enable_starttls_auto => true  }
+    config.action_mailer.default_url_options = { :host => 'goddamnyouryan.com' }
   end
 end

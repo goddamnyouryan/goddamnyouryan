@@ -1,5 +1,7 @@
-- @blogs.each do |blog|
-  header
-    h1 = link_to blog.title, blog
-    h2 = blog.created_at.strftime("%B #{blog.created_at.day.ordinalize}, %Y")
-  .body = blog.body.html_safe
+ul#posts
+  - @blogs.each do |blog|
+    li
+      header
+        h1 = link_to blog.title, blog
+        h2 = blog.created_at.strftime("%B #{blog.created_at.day.ordinalize}, %Y")
+      .body = blog.body.html_safe

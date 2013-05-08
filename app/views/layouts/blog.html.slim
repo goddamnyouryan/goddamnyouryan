@@ -12,3 +12,4 @@ html
       h2 The blog of #{link_to 'Ryan MacInnes', root_path}. Web developer and gun for hire.
       .container
         = yield
+        footer ©#{Time.now.year} #{link_to 'Ryan MacInnes', root_path}
