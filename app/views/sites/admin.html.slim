@@ -33,6 +33,7 @@ coffee:
     - Blog.all.each do |blog|
       li
         =' blog.title
+        =' link_to 'show', blog
         =' link_to 'edit', edit_blog_path(blog)
         = link_to 'delete', blog, method: :delete
 

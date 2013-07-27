@@ -54,6 +54,19 @@
       p {
         margin-bottom: 15px;
       }
+
+      code {
+        display: block;
+        background: darken($white, 5%);
+        padding: 25px;
+        margin: 25px 0;
+        font-family: 'Courier New', courier, monospace;
+
+        .file {
+          font-weight: bold;
+          margin-bottom: 25px;
+        }
+      }
     }
 
     footer {
