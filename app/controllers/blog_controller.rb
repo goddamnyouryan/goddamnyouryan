@@ -36,6 +36,10 @@ class BlogController < ApplicationController
   end
 
   def destroy
+    @title = @blog.title
+    @blog.destroy
+
+    redirect_to admin_path, notice: "#{@title} deleted"
   end
 
   private
