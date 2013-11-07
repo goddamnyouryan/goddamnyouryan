@@ -4,7 +4,7 @@ class BlogController < ApplicationController
   layout 'blog'
 
   def index
-    @blogs = Blog.order('created_at desc')
+    @blogs = Blog.public.order('created_at desc')
   end
 
   def show
@@ -29,7 +29,7 @@ class BlogController < ApplicationController
   def update
     @blog.update_attributes params[:blog]
     if @blog.save
-      redirect_to admin_path
+      redirect_to edit_blog_path(@blog)
     else
       render :edit
     end

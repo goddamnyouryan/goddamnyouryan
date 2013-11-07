@@ -11,6 +11,9 @@ h1 Edit Blog Post
     br
     = f.text_area :body
 
-  div contentEditable='true' = @blog.body.html_safe
+  p
+    = f.label :private
+    br
+    = f.check_box :private
 
   p = f.submit

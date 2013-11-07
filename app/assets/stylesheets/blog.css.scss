@@ -26,7 +26,7 @@
   }
 
   .container {
-    width: 600px;
+    width: 800px;
     margin: 0 auto;
 
     header {
@@ -51,15 +51,28 @@
     .body {
       @include font(400, 20px, 30px, $serif);
 
+      h2 {
+        @include font(600, 24px, 32px, $serif);
+        margin: 100px 0 15px;
+      }
+
+      img { margin: 0; width: 800px; display: block;}
+
+      p, code { width: 600px; }
+
       p {
-        margin-bottom: 15px;
+        margin: 0 auto 15px;
+      }
+
+      .caption {
+        text-align: center;
       }
 
       code {
         display: block;
         background: darken($white, 5%);
         padding: 25px;
-        margin: 25px 0;
+        margin: 25px auto;
         font-family: 'Courier New', courier, monospace;
 
         .file {

@@ -12,6 +12,9 @@ h1 New Blog Post
     br
     = f.text_area :body
 
-  p content_editable='true' = @blog.body
+  p
+    = f.label :private
+    br
+    = f.check_box :private
 
   p = f.submit
