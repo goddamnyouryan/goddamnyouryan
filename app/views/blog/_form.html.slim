@@ -1,0 +1,11 @@
+= form_for @blog, { url: url } do |f|
+
+  p = f.text_field :title, placeholder: 'Title'
+
+  p = f.text_area :body, placeholder: 'Write something ya numbskull...'
+
+  p.private
+    = f.check_box :private
+    = f.label :private
+
+  p = f.submit
