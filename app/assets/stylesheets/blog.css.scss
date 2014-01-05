@@ -28,6 +28,8 @@
 
   p, code, h1, h3, form, footer, nav { width: 800px; margin: 0 auto; }
 
+  @media screen and (max-width: 600px) { p, code, h1, h3, form, footer, nav { width: 90%; } }
+
   footer {
     margin: 50px auto 0;
     text-align: center;
