@@ -1,10 +1,12 @@
 class BlogController < ApplicationController
-  http_basic_authenticate_with :name => 'ryan', :password => 'poophorsebananaschema', except: [:index, :show]
+  http_basic_authenticate_with name: 'ryan', password: 'poophorsebananaschema', except: [:index, :show]
   before_filter :find_blog, only: [:show, :edit, :update, :destroy]
   layout 'blog'
 
   def index
-    @blogs = Blog.public.order('created_at desc')
+    @page = params[:page] || 1
+    @page = @page.to_i
+    @blogs = Blog.public.order('created_at desc').page(@page).per(PER_PAGE)
   end
 
   def show

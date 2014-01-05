@@ -8,6 +8,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'friendly_id'
 gem 'rack-rewrite'
+gem 'kaminari'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

@@ -1,3 +1,11 @@
 ul#posts
   - @blogs.each do |blog|
     li = render partial: 'entry', locals: { blog: blog }
+
+- if @blogs.total_pages > 1
+  nav#pagination
+    ul
+      - if @page > 1
+        li.previous = link_to 'Previous', blog_page_path(@page - 1)
+      - unless @page == @blogs.total_pages
+        li.next = link_to 'Next', blog_page_path(@page + 1)
