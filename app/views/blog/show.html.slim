@@ -1,4 +1,1 @@
-header
-  h1 = @blog.title
-  h2 = @blog.created_at.strftime("%B #{@blog.created_at.day.ordinalize}, %Y")
-.body = @blog.body.html_safe
+= render partial: 'entry', locals: { blog: @blog }

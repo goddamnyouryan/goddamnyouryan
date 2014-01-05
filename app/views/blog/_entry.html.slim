@@ -1,0 +1,5 @@
+.entry
+  header
+    h1 = link_to blog.title, blog
+    h3 = blog.created_at.strftime("%B #{blog.created_at.day.ordinalize}, %Y")
+  .body = blog.body.html_safe

@@ -25,27 +25,36 @@
     text-align: center;
   }
 
-  .container {
-    width: 800px;
+
+  p, code, h1, h3, form, footer { width: 800px; margin: 0 auto; }
+
+  footer {
+    margin: 50px auto 0;
+    text-align: center;
+  }
+
+  .entry {
     margin: 0 auto;
 
     header {
       margin: 100px 0 30px 0;
+    }
 
-      h1 {
-        @include font(600, 36px, 40px, $serif);
+    h1 {
+      @include font(600, 36px, 40px, $serif);
 
-        a {
-          color: $black;
-          text-decoration: none;
+      a {
+        color: $black;
+        text-decoration: none;
 
-          &:hover { color: $highlight; }
-        }
+        &:hover { color: $highlight; }
       }
+    }
 
-      h2 {
-        @include font(400, 14px, 20px, $sans);
-      }
+    h3 {
+      @include font(400, 14px, 20px, $sans);
+      text-align: center;
+      margin: 25px auto;
     }
 
     .body {
@@ -56,9 +65,13 @@
         margin: 100px 0 15px;
       }
 
-      img { margin: 0; width: 800px; display: block;}
+      img {
+        margin: 0;
+        width: 100%;
+        display: block;
 
-      p, code { width: 600px; }
+        &+ p { margin: 15px auto; }
+      }
 
       p {
         margin: 0 auto 15px;
@@ -83,10 +96,6 @@
 
       em { font-style: italic; }
       strong { font-weight: bold; }
-    }
-
-    footer {
-      margin: 50px 0 0 0;
     }
   }
 }

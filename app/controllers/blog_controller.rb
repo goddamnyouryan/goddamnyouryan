@@ -29,7 +29,7 @@ class BlogController < ApplicationController
   def update
     @blog.update_attributes params[:blog]
     if @blog.save
-      redirect_to edit_blog_path(@blog)
+      redirect_to @blog
     else
       render :edit
     end
