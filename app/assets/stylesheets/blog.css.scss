@@ -26,9 +26,13 @@
   }
 
 
-  p, code, h1, h3, form, footer, nav { width: 800px; margin: 0 auto; }
+  p, code, h1, h3, form, footer, nav, ul { width: 800px; margin: 0 auto; }
 
-  @media screen and (max-width: 600px) { p, code, h1, h3, form, footer, nav { width: 90%; } }
+  @media screen and (max-width: 600px) {
+    p, code, h1, h3, form, footer, nav, ul { width: 90%; }
+
+    ul li { margin: 0 10% 10px !important; }
+  }
 
   footer {
     margin: 50px auto 0;
@@ -75,8 +79,13 @@
         &+ p { margin: 15px auto; }
       }
 
-      p {
+      p, ul {
         margin: 0 auto 15px;
+      }
+
+      ul li {
+        list-style: disc;
+        margin: 0 50px 10px;
       }
 
       .caption {
@@ -98,6 +107,18 @@
 
       em { font-style: italic; }
       strong { font-weight: bold; }
+    }
+  }
+
+  nav {
+
+    ul {
+      @include font(400, 18px, 24px, $serif);
+    }
+
+    li {
+      list-style: disc;
+      margin: 0 50px;
     }
   }
 }

@@ -1,1 +1,11 @@
-= render partial: 'entry', locals: { blog: @blog }
+.entry
+  header
+    h1 = link_to @blog.title, @blog
+    h3 = @blog.created_at.strftime("%B #{@blog.created_at.day.ordinalize}, %Y")
+  .body = @blog.body.html_safe
+  nav
+    ul
+      - if @next.present?
+        li Next: #{link_to @next.title, @next}
+      - if @previous.present?
+        li Previous: #{link_to @previous.title, @previous}

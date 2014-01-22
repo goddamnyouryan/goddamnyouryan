@@ -4,12 +4,15 @@ class BlogController < ApplicationController
   layout 'blog'
 
   def index
-    @page = params[:page] || 1
-    @page = @page.to_i
-    @blogs = Blog.public.order('created_at desc').page(@page).per(PER_PAGE)
+    @blog = Blog.public.first
+    @previous = @blog.previous
+    @next = @blog.next
+    render :show
   end
 
   def show
+    @previous = @blog.previous
+    @next = @blog.next
   end
 
   def new
