@@ -32,6 +32,17 @@
     p, code, h1, h3, form, footer, nav, ul { width: 90%; }
 
     ul li { margin: 0 10% 10px !important; }
+
+
+    h1 {
+      font-size: 24px;
+      @include font(600, 24px, 32px, $serif);
+    }
+
+    .main h2 {
+      font-size: 14px;
+      padding: 0 25px;
+    }
   }
 
   footer {
@@ -120,6 +131,34 @@
       list-style: disc;
       margin: 0 50px;
     }
+  }
+
+  &.with-title-image {
+    padding: 0 0 50px;
+
+    img.header {
+      position: relative;
+      width: 100%;
+    }
+
+    header.main {
+      color: $white;
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      margin-top: 50px;
+      top: 0;
+
+      a {
+        color: $white;
+
+        &:hover {
+          color: $highlight;
+        }
+      }
+    }
+
+    .entry header { margin: 30px 0; }
   }
 }
 

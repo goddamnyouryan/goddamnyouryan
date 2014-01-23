@@ -1,3 +1,5 @@
+- if @blog.title_image.present?
+  = image_tag @blog.title_image, class: 'header'
 .entry
   header
     h1 = link_to @blog.title, @blog
