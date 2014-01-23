@@ -22,7 +22,7 @@ class BlogController < ApplicationController
   def create
     @blog = Blog.create params[:blog]
     if @blog.save
-      redirect_to admin_path
+      redirect_to @blog, notice: 'Blog post created.'
     else
       render :new
     end
