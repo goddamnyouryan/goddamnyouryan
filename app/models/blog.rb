@@ -10,7 +10,7 @@ class Blog < ActiveRecord::Base
   scope :public, -> { where(private: false) }
 
   def next
-    Blog.public.where('id > ?', self.id).first
+    Blog.unscoped.public.where('id > ?', self.id).order('created_at asc').first
   end
 
   def previous
