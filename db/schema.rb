@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140123064444) do
+ActiveRecord::Schema.define(:version => 20140123074037) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20140123064444) do
     t.string   "slug"
     t.boolean  "private",     :default => false, :null => false
     t.string   "title_image"
+    t.boolean  "dark",        :default => false, :null => false
   end
 
   create_table "messages", :force => true do |t|
