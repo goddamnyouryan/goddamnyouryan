@@ -5,9 +5,13 @@ class BlogController < ApplicationController
 
   def index
     @blog = Blog.public.first
+    @blogs = Blog.all
     @previous = @blog.previous
     @next = @blog.next
-    render :show
+    respond_to do |format|
+      format.html { render :show }
+      format.rss
+    end
   end
 
   def show
