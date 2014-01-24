@@ -5,7 +5,7 @@ class BlogController < ApplicationController
 
   def index
     @blog = Blog.public.first
-    @blogs = Blog.all
+    @blogs = Blog.public
     @previous = @blog.previous
     @next = @blog.next
     respond_to do |format|
