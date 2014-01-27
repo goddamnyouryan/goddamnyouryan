@@ -70,7 +70,7 @@ module Goddamnyouryan
       :port                 => 587,
       :domain               => 'goddamnyouryan.com',
       :user_name            => 'ryan.macinnes@gmail.com',
-      :password             => '7VTnzFToJEDJZPByO9iEIA',
+      :password             => ENV['GODDAMNYOURYAN_MANDRILL_API_KEY'],
       :authentication       => 'plain',
       :enable_starttls_auto => true  }
     config.action_mailer.default_url_options = { :host => 'goddamnyouryan.com' }
