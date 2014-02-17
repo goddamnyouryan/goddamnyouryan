@@ -2,8 +2,8 @@
   = image_tag @blog.title_image, class: 'header'
 .entry
   header
-    h1 = link_to @blog.title, @blog
     h3 = @blog.created_at.strftime("%B #{@blog.created_at.day.ordinalize}, %Y")
+    h1 = link_to @blog.title, @blog
   .body = @blog.body.html_safe
   nav
     ul

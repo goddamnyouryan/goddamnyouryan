@@ -2,9 +2,15 @@
   background: $white;
   color: $black;
   font-family: $serif;
-  padding: 50px 0;
 
-  a { color: $highlight; }
+  a {
+    @include single-transition(color, 0.2s, ease-in-out);
+    color: $highlight;
+
+    &:hover {
+      color: darken($highlight, 10%);
+    }
+  }
 
   h1 {
     @include font(400, 55px, 64px, $serif);
@@ -22,17 +28,14 @@
 
   h2 {
     @include font(300, 17px, 24px, $sans);
-    text-align: center;
   }
 
-
-  p, code, h1, h3, form, footer, nav, ul { width: 800px; margin: 0 auto; }
+  p, code, h1, h2, h3, form, footer .container , nav, ul { width: 800px; margin: 0 auto; }
 
   @media screen and (max-width: 600px) {
-    p, code, h1, h3, form, footer, nav, ul { width: 90%; }
+    p, code, h1, h2, h3, form, footer .container, nav, ul { width: 90%; }
 
     ul li { margin: 0 10% 10px !important; }
-
 
     h1 {
       font-size: 24px;
@@ -46,19 +49,32 @@
   }
 
   footer {
+    $darker: darken($white, 20%);
+    background: darken($white, 5%);
+    border-top: 1px solid darken($white, 10%);
+    color: $darker;
+    padding: 50px 0;
     margin: 50px auto 0;
-    text-align: center;
+
+    a {
+      color: $darker;
+
+      &:hover { color: darken($darker, 10%); }
+    }
   }
 
   .entry {
     margin: 0 auto;
 
     header {
-      margin: 100px 0 30px 0;
+      margin: 60px 0 30px 0;
     }
 
     h1 {
-      @include font(600, 36px, 40px, $serif);
+      @include font(600, 64px, 72px, $serif);
+      letter-spacing: -1px;
+      margin: 0 auto 50px;
+      text-align: left;
 
       a {
         color: $black;
@@ -70,8 +86,7 @@
 
     h3 {
       @include font(400, 14px, 20px, $sans);
-      text-align: center;
-      margin: 25px auto;
+      color: darken($white, 20%);
     }
 
     .body {
@@ -79,7 +94,6 @@
 
       h2 {
         @include font(600, 24px, 32px, $serif);
-        margin: 100px 0 15px;
       }
 
       img {
@@ -87,11 +101,11 @@
         width: 100%;
         display: block;
 
-        &+ p { margin: 15px auto; }
+        &+ p { margin: 1.6em auto; }
       }
 
       p, ul {
-        margin: 0 auto 15px;
+        margin: 0 auto 1.6em;
       }
 
       ul li {
@@ -134,7 +148,6 @@
   }
 
   &.with-title-image {
-    padding: 0 0 50px;
 
     img.header {
       position: relative;
@@ -155,16 +168,6 @@
         }
       }
     }
-
-    header.main {
-      position: absolute;
-      z-index: 2;
-      width: 100%;
-      margin-top: 50px;
-      top: 0;
-    }
-
-    .entry header { margin: 30px 0; }
   }
 }
 
