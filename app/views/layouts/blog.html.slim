@@ -18,6 +18,9 @@ html
       })();
 
   body.blog class="#{title_image}"
+    header.main
+      h1 = link_to 'God Damn You Ryan', blog_index_path
+      h2 The Blog of #{link_to 'Ryan MacInnes', root_path}. Web developer and pretty cool dude.
     = yield
     footer
       .container ©#{Time.now.year} #{link_to 'Ryan MacInnes', root_path} #{link_to 'Blog', blog_index_path}

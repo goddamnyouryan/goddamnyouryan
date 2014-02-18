@@ -12,6 +12,10 @@
     }
   }
 
+  header.main {
+    margin: 50px 0 100px;
+  }
+
   h1 {
     @include font(400, 55px, 64px, $serif);
     text-align: center;
@@ -28,6 +32,7 @@
 
   h2 {
     @include font(300, 17px, 24px, $sans);
+    text-align: center;
   }
 
   p, code, h1, h2, h3, form, footer .container , nav, ul { width: 800px; margin: 0 auto; }
@@ -94,6 +99,7 @@
 
       h2 {
         @include font(600, 24px, 32px, $serif);
+        text-align: left;
       }
 
       img {
@@ -152,6 +158,14 @@
     img.header {
       position: relative;
       width: 100%;
+    }
+
+    header.main {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      margin-top: 50px;
+      top: 0;
     }
 
     &.light {
