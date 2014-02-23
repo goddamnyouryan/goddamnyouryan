@@ -107,7 +107,7 @@
         width: 100%;
         display: block;
 
-        &+ p { margin: 1.6em auto; }
+        &+ p, &+ h2 { margin-top: 1.6em; }
       }
 
       p, ul {
