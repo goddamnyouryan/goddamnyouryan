@@ -74,40 +74,6 @@
   }
 }
 
-@media all and (max-width: 1000px) {
-
-  ul#work {
-
-    li#about {
-      height: auto;
-
-      h1 {
-        padding-top: 50px;
-        width: 80%;
-        margin: 0 auto 50px;
-      }
-
-      .bio {
-        width: 100%;
-
-        img {
-          float: none;
-          display: block;
-          width: 300px;
-          margin: 0 auto 25px;
-        }
-
-        p {
-          float: none;
-          display: block;
-          width: 80%;
-          margin: 0 auto 50px;
-        }
-      }
-    }
-  }
-}
-
 @media all and (max-width: 801px) {
 
   .intro {
@@ -169,20 +135,6 @@
                 height: 206px;
               }
             }
-          }
-        }
-      }
-
-      &#about {
-
-        h1 {
-          @include font(400, 32px, 48px, $serif);
-        }
-
-        .bio {
-
-          img {
-            width: 200px;
           }
         }
       }
@@ -275,24 +227,6 @@
                 height: 156px;
               }
             }
-          }
-        }
-      }
-
-      &#about {
-
-        h1 {
-          @include font(400, 32px, 48px, $serif);
-        }
-
-        .bio {
-
-          img {
-            width: 200px;
-          }
-
-          p {
-            width: 70%;
           }
         }
       }

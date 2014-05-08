@@ -157,42 +157,6 @@ ul#work {
       }
     }
 
-    &#about {
-      background: $white;
-      color: $black;
-      text-align: center;
-
-      h1 {
-        @include font(400, 48px, 64px, $serif);
-        padding-top: 140px;
-        margin-bottom: 50px;
-      }
-
-      .bio {
-        width: 960px;
-        margin: 0 auto;
-
-        img {
-          @include float-left;
-          margin-right: 50px;
-        }
-
-        p {
-          @include float-left;
-          @include font(300, 15px, 26px, $sans);
-          text-align: left;
-          width: 610px;
-
-          &:first-child { margin-right: 25px; }
-
-          a {
-            color: $highlight;
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-
     &#contact {
       background: $highlight;
       color: $white;

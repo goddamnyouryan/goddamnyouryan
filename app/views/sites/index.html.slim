@@ -10,11 +10,10 @@
       li = link_to 'Intro', '#intro', class: 'current'
       - @sites.each do |site|
         li = link_to site.name, "##{site.slug}", class: site.slug
-      li = link_to 'About', '#about', class: 'about'
       li = link_to 'Contact', '#contact', class: 'contact'
 
   p
-    ' I'm a web designer and programmer from New York City.
+    ' I'm a web designer and programmer from New York City and Los Angeles.
     ' I make websites for myself, or for you.
     ' I work usually using Rails with CSS3, HTML5 and Javascript.
     ' This description of myself is starting to get long and boring already.
@@ -38,19 +37,6 @@ ul#work
             .imac
               = image_tag 'imac.png'
               = image_tag site.photo.url
-
-  li#about
-    h1 Just a 'lil bit about Ryan MacInnes...
-    .bio
-      = image_tag 'ryan.png'
-      p I made my very first website when I was 14. It was absolutely terrible. I've been making websites ever since, some of which are slightly better.
-        I doubled majored in Environmental Biology and Microbiology in college, which has done exactly zero for me career-wise. Once I graduated
-        I moved to LA and got back into making websites. I started working in Rails in late 2007. In 2009 I started working for Sony Pictures as a project manager, making websites freelance
-        on the side. In early 2012 I started working at #{link_to 'GOOD', 'http://www.good.is', rel: 'external'} as a software engineer. I also moved to New York City.
-        Now I work in it almost exclusively, along with HTML5, CSS3, Javascript (jQuery of course)
-        with a litle bit of Backbone all using TDD. I'm also not bad in Python, Bash and I'm teaching myself C at the the moment. I'm the best at creating your MVP,
-        making your idea into a reality, as cliche as that sounds. I'm an okay designer, I like
-        photoshop and not illustrator. I love learning new things and I love taking on challenges. I especially love getting paid to do both. So #{link_to 'do it', '#contact', class: 'hire'} already!
 
   li#contact
     h1 Contact Me
