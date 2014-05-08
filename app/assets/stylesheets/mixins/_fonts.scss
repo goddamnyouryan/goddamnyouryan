@@ -1,8 +1,8 @@
-$fonts: 'helveticaregular', 'hevleticabold', 'FontAwesome';
+$fonts: 'meta-serif', 'meta-serif-bold', 'FontAwesome';
 
 $sans: 'Helvetica', Arial, Sans-Serif;
-$serif: nth($fonts, 1), Georgia, Serif;
-$serif-bold: nth($fonts, 2), Georgia, Serif;
+$serif: 'helveticaregular', Georgia, Serif;
+$serif-bold: 'helveticabold', Georgia, Serif;
 
 @each $font in $fonts {
   @include font-face(
@@ -24,6 +24,8 @@ $serif-bold: nth($fonts, 2), Georgia, Serif;
 }
 
 @mixin font-awesome-icon($icon-unicode) {
+  font-family: 'FontAwesome';
+  position: relative;
 
   &:before {
     content: $icon-unicode;
