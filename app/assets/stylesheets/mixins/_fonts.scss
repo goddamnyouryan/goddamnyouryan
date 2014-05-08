@@ -1,33 +1,34 @@
-@import "compass/css3/font-face";
+$fonts: 'helveticaregular', 'hevleticabold', 'FontAwesome';
+
 $sans: 'Helvetica', Arial, Sans-Serif;
-$serif: 'helveticaregular', Georgia, Serif;
-$serif-bold: 'helveticabold', Georgia, Serif;
+$serif: nth($fonts, 1), Georgia, Serif;
+$serif-bold: nth($fonts, 2), Georgia, Serif;
 
-@include font-face(
-  nth($serif, 1),
-  font-files(
-    'meta-serif-webfont.woff', woff,
-    'meta-serif-webfont.ttf', truetype,
-    'meta-serif-webfont.svg##{nth($serif, 1)}', svg
-  ),
-  'meta-serif-webfont.eot',
-  normal,
-  normal
-);
-
-@include font-face(
-  nth($serif-bold, 1),
-  font-files(
-    'meta-serif-bold-webfont.woff', woff,
-    'meta-serif-bold-webfont.ttf', truetype,
-    'meta-serif-bold-webfont.svg##{nth($serif-bold, 1)}', svg
-  ),
-  'meta-serif-bold-webfont.eot',
-  normal,
-  normal
-);
+@each $font in $fonts {
+  @include font-face(
+    $font,
+    font-files(
+      '#{$font}.woff', woff,
+      '#{$font}.ttf', truetype,
+      '#{$font}.svg##{$font}', svg
+    ),
+    '#{$font}.eot',
+    normal,
+    normal
+  );
+}
 
 @mixin font($weight, $size, $leading, $font-family) {
   font: $weight #{$size}/#{$leading} $font-family;
   -webkit-font-smoothing: antialiased;
+}
+
+@mixin font-awesome-icon($icon-unicode) {
+  font-family: nth($fonts, 3);
+  position: relative;
+
+  &:before {
+    content: $icon-unicode;
+    position: absolute;
+  }
 }
