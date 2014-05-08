@@ -85,7 +85,41 @@ $item-height: 780px;
   }
 
   nav#links {
-    display: none;
+    text-align: center;
+    margin-top: 75px;
+
+    ul {
+      position: relative;
+      left: -4px;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    a {
+      font-family: nth($fonts, 3);
+      color: transparent;
+
+      &:before {
+        @include single-transition(color, 0.2s, ease-in-out);
+        color: $black;
+        font-size: 50px;
+      }
+
+      &:hover {
+
+        &:before {
+          color: $highlight;
+        }
+      }
+
+      &#github { @include font-awesome-icon('\f09b'); }
+      &#twitter { @include font-awesome-icon('\f099'); }
+      &#blog { @include font-awesome-icon('\f09e'); }
+      &#email { @include font-awesome-icon('\f003'); }
+    }
   }
 }
 

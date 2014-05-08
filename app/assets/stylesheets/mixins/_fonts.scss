@@ -24,8 +24,6 @@ $serif-bold: nth($fonts, 2), Georgia, Serif;
 }
 
 @mixin font-awesome-icon($icon-unicode) {
-  font-family: nth($fonts, 3);
-  position: relative;
 
   &:before {
     content: $icon-unicode;
