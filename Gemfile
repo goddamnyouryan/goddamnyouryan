@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'rails', '3.2.18'
 gem 'pg'
@@ -7,7 +8,6 @@ gem 'slim-rails'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'friendly_id'
-gem 'rack-rewrite'
 gem 'newrelic_rpm'
 
 group :assets do
@@ -19,4 +19,8 @@ end
 
 group :development do
   gem 'debugger'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
