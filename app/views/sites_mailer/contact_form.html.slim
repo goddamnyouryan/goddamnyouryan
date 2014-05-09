@@ -1,15 +1,13 @@
 doctype html
 html
   head
-    meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
+    meta content='text/html; charset=UTF-8' http-equiv='Content-Type'
   body
-    h1 Yeah dude a lead!
-    p Dear Sexy Man,
-    p somebody wants your services and shit.
-    p = @name
-    p = link_to @email, "mailto:#{@email}"
-    p = @body
-    p Goodluck, you bastard.
+    p Dear Ryan,
+    p Someone is contacting you via your site:
+    p #{@name} - #{link_to @email, "mailto:#{@email}"}
+    p Their message:
+    div = simple_format @body.html_safe
     p
       ' Love,
       br

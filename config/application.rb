@@ -70,5 +70,8 @@ module Goddamnyouryan
       :authentication       => 'plain',
       :enable_starttls_auto => true  }
     config.action_mailer.default_url_options = { :host => 'goddamnyouryan.com' }
+
+    # Make slims indenting purdy
+    Slim::Engine.set_default_options pretty: true, sort_attrs: false
   end
 end

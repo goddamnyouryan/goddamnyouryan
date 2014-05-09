@@ -35,6 +35,12 @@ Goddamnyouryan::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  # Make slims indenting purdy
-  Slim::Engine.set_default_options pretty: true, sort_attrs: false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+    :address              => 'localhost',
+    :port                 => 1025,
+    :domain               => 'goddamnyouryan.com',
+    :enable_starttls_auto => true  }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
