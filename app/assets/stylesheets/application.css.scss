@@ -1,8 +1,4 @@
-//= require_self
 @import 'compass';
 @import 'compass/reset';
 @import 'mixins/*';
-@import 'sites';
-@import 'blog';
-@import 'responsive'
-//= require_tree .
+@import 'views/*';
