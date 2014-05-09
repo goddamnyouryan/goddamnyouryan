@@ -223,9 +223,10 @@ ul#work {
           margin-bottom: 25px;
 
 
-          input[type=text], input[type=email] {
+          input[type=text], input[type=email], textarea {
             @include font(300, 15px, 24px, $sans);
             @include placeholder(lighten($black, 40%));
+            outline: none;
             background: $white;
             color: $black;
             width: 380px;
@@ -236,17 +237,8 @@ ul#work {
           }
 
           textarea {
-            @include font(300, 15px, 24px, $sans);
-            @include placeholder(lighten($black, 40%));
-            background: $white;
-            color: $black;
-            border: none;
-            padding: 10px;
-            width: 380px;
             height: 100px;
             resize: none;
-
-            &.error { outline: 1px solid $error; }
           }
 
           input[type=submit] {
@@ -271,7 +263,6 @@ ul#work {
             @include font(300, 12px, 16px, $sans);
             text-align: center;
             padding: 20px;
-            background: lighten($highlight, 20%);
           }
         }
       }
