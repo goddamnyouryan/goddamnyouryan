@@ -2,8 +2,8 @@ $item-height: 780px;
 
 .intro {
   width: 100%;
-  height: $item-height;
   background: $white;
+  padding: 175px 0;
 
   $header-width: 601px;
 
@@ -14,7 +14,6 @@ $item-height: 780px;
     position: relative;
     left: 10px;
     margin: 0 auto;
-    padding-top: 200px;
 
     .name {
       @include font(400, 87px, 102px, $serif);

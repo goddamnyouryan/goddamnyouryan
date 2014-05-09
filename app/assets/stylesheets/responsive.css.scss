@@ -1,25 +1,5 @@
 @media all and (max-width: 1150px) {
 
-  .intro {
-    height: 475px;
-
-    h1 {
-      padding-top: 50px;
-
-      .name {
-
-      }
-    }
-
-    h2 {
-
-    }
-
-    p {
-
-    }
-  }
-
   ul#work {
 
     li {
@@ -77,7 +57,8 @@
 @media all and (max-width: 801px) {
 
   .intro {
-    $header-width: 400px;
+    $header-width: 70%;
+    padding: 75px 0;
 
     h1 {
       width: $header-width;
@@ -91,12 +72,13 @@
     h2 {
       width: $header-width;
       margin: 20px auto;
-      text-align: center;
     }
 
     p {
       width: $header-width;
     }
+
+    nav#links { margin-top: 35px; }
   }
 
   ul#work {
@@ -165,7 +147,6 @@
 
   .intro {
     $header-width: 300px;
-    height: 450px;
 
     h1 {
       @include font(300, 20px, 28px, $sans);
@@ -179,7 +160,6 @@
     h2 {
       @include font(300, 20px, 28px, $sans);
       width: $header-width;
-      margin: 10px auto;
     }
 
     p {
@@ -187,6 +167,17 @@
     }
 
     nav#sites { display: none; }
+
+    nav#links {
+
+      li {
+        margin: 0 5px;
+
+        a:before {
+          font-size: 30px;
+        }
+      }
+    }
   }
 
   ul#work {
