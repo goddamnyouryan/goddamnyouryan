@@ -1,127 +1,5 @@
 $item-height: 780px;
 
-.intro {
-  width: 100%;
-  background: $white;
-  padding: 175px 0;
-
-  $header-width: 601px;
-
-  h1 {
-    @include font(300, 24px, 32px, $sans);
-    color: $highlight;
-    width: $header-width;
-    position: relative;
-    left: 10px;
-    margin: 0 auto;
-
-    .name {
-      @include font(400, 87px, 102px, $serif);
-      margin: 10px 0 0 -10px;
-      color: $black;
-    }
-  }
-
-  h2 {
-    @include font(300, 24px, 32px, $sans);
-    color: $highlight;
-    width: $header-width;
-    margin: 32px auto;
-  }
-
-  nav#sites {
-    position: fixed;
-    top: 30px;
-    left: 30px;
-
-    ul {
-
-      li {
-        margin-bottom: 30px;
-
-        a {
-          @include font(300, 11px, 16px, $sans);
-          @include single-transition(all, 0.2s, ease-in-out);
-          text-decoration: none;
-          color: $transparent-black;
-          position: relative;
-          padding-left: 10px;
-
-          &:before {
-            content: '';
-            background: $gray;
-            position: absolute;
-            display: block;
-            left: -15px;
-            top: -2px;
-            width: 15px;
-            height: 15px;
-          }
-
-          &.current {
-
-            &:before { background: $black; }
-          }
-
-          &:hover {
-            color: $black;
-
-            &:before { background: $black; }
-          }
-        }
-      }
-    }
-  }
-
-  p {
-    @include font(300, 15px, 24px, $sans);
-    width: $header-width;
-    margin: 0 auto;
-
-    a {
-      color: $highlight;
-    }
-  }
-
-  nav#links {
-    text-align: center;
-    margin-top: 75px;
-
-    ul {
-      position: relative;
-      left: -4px;
-    }
-
-    li {
-      display: inline-block;
-      margin: 0 15px;
-    }
-
-    a {
-      font-family: nth($fonts, 3);
-      color: transparent;
-
-      &:before {
-        @include single-transition(color, 0.2s, ease-in-out);
-        color: $black;
-        font-size: 50px;
-      }
-
-      &:hover {
-
-        &:before {
-          color: $highlight;
-        }
-      }
-
-      &#github { @include font-awesome-icon('\f09b'); }
-      &#twitter { @include font-awesome-icon('\f099'); }
-      &#blog { @include font-awesome-icon('\f09e'); }
-      &#email { @include font-awesome-icon('\f003'); }
-    }
-  }
-}
-
 ul#work {
 
   li {
@@ -267,26 +145,174 @@ ul#work {
       }
     }
   }
-}
 
-#admin {
+  @include media(1150px) {
+    li {
+      height: 800px;
 
-  h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 25px;
+      a {
+
+        .site {
+          width: 100%;
+          padding-top: 50px;
+
+          .meta {
+            float: none;
+            width: auto;
+
+            h2 {
+              text-align: center;
+            }
+
+            p {
+              margin: 0 auto 25px;
+              text-align: center;
+              width: 600px;
+            }
+          }
+
+          .imac {
+            float: none;
+            display: block;
+            width: 633px;
+            margin: 0 auto;
+
+            img {
+
+              &:nth-child(1) {
+                position: absolute;
+              }
+            }
+          }
+        }
+      }
+
+      &#contact {
+        height: 500px;
+        padding-top: 50px;
+
+        h1 {
+          padding-top: 0;
+        }
+      }
+    }
   }
 
-  h2 {
-    margin: 25px 0;
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  ul#messages {
+  @include media(801px) {
 
     li {
-      margin-bottom: 15px;
+      height: 625px;
+
+      a {
+
+        .site {
+
+          .meta {
+
+            h2 {
+
+            }
+
+            p {
+              width: 400px;
+            }
+          }
+
+          .imac {
+            width: 400px;
+
+            img {
+
+              &:nth-child(1) {
+                width: 400px;
+              }
+
+              &:nth-child(2) {
+                left: 16px;
+                top: 19px;
+                width: 370px;
+                height: 206px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media(480px) {
+
+    li {
+      height: 575px;
+
+      a {
+
+        .site {
+
+          .meta {
+
+            h2 {
+              @include font(400, 32px, 40px, $serif);
+              width: 300px;
+              margin: 0 auto 25px;
+            }
+
+            p {
+              width: 300px;
+            }
+          }
+
+          .imac {
+            width: 300px;
+
+            img {
+
+              &:nth-child(1) {
+                width: 300px;
+              }
+
+              &:nth-child(2) {
+                left: 12px;
+                top: 14px;
+                width: 277px;
+                height: 156px;
+              }
+            }
+          }
+        }
+      }
+
+      &#contact {
+        height: 450px;
+
+        h1 {
+          @include font(400, 32px, 40px, $serif);
+        }
+
+        h2 {
+          @include font(400, 11px, 17px, $sans);
+          width: 300px;
+          margin: 10px auto;
+        }
+
+        form {
+          width: 100%;
+
+          p {
+
+            input[type=text], input[type=submit], input[type=email], textarea {
+              width: 70%;
+              margin: 0 auto 15px;
+              display: block;
+              padding: 10px;
+            }
+
+            input[type=submit] {
+              width: 75%;
+            }
+          }
+        }
+      }
     }
   }
 }

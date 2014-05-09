@@ -1,0 +1,181 @@
+.intro {
+  width: 100%;
+  background: $white;
+  padding: 175px 0;
+
+  $header-width: 601px;
+
+  h1 {
+    @include font(300, 24px, 32px, $sans);
+    color: $highlight;
+    width: $header-width;
+    position: relative;
+    left: 10px;
+    margin: 0 auto;
+
+    .name {
+      @include font(400, 87px, 102px, $serif);
+      margin: 10px 0 0 -10px;
+      color: $black;
+    }
+  }
+
+  h2 {
+    @include font(300, 24px, 32px, $sans);
+    color: $highlight;
+    width: $header-width;
+    margin: 32px auto;
+  }
+
+  nav#sites {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+
+    ul {
+
+      li {
+        margin-bottom: 30px;
+
+        a {
+          @include font(300, 11px, 16px, $sans);
+          @include single-transition(all, 0.2s, ease-in-out);
+          text-decoration: none;
+          color: $transparent-black;
+          position: relative;
+          padding-left: 10px;
+
+          &:before {
+            content: '';
+            background: $gray;
+            position: absolute;
+            display: block;
+            left: -15px;
+            top: -2px;
+            width: 15px;
+            height: 15px;
+          }
+
+          &.current {
+
+            &:before { background: $black; }
+          }
+
+          &:hover {
+            color: $black;
+
+            &:before { background: $black; }
+          }
+        }
+      }
+    }
+  }
+
+  p {
+    @include font(300, 15px, 24px, $sans);
+    width: $header-width;
+    margin: 0 auto;
+
+    a {
+      color: $highlight;
+    }
+  }
+
+  nav#links {
+    text-align: center;
+    margin-top: 75px;
+
+    ul {
+      position: relative;
+      left: -4px;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    a {
+      font-family: nth($fonts, 3);
+      color: transparent;
+
+      &:before {
+        @include single-transition(color, 0.2s, ease-in-out);
+        color: $black;
+        font-size: 50px;
+      }
+
+      &:hover {
+
+        &:before {
+          color: $highlight;
+        }
+      }
+
+      &#github { @include font-awesome-icon('\f09b'); }
+      &#twitter { @include font-awesome-icon('\f099'); }
+      &#blog { @include font-awesome-icon('\f09e'); }
+      &#email { @include font-awesome-icon('\f003'); }
+    }
+  }
+
+  @include media(801px) {
+    $header-width: 70%;
+    padding: 75px 0;
+
+    h1 {
+      width: $header-width;
+
+      .name {
+        @include font(400, 60px, 72px, $serif);
+        margin-top: 0;
+      }
+    }
+
+    h2 {
+      width: $header-width;
+      margin: 20px auto;
+    }
+
+    p {
+      width: $header-width;
+    }
+
+    nav#links { margin-top: 35px; }
+  }
+
+  @include media(480px) {
+    $header-width: 300px;
+
+    h1 {
+      @include font(300, 20px, 28px, $sans);
+      width: $header-width;
+
+      .name {
+        @include font(400, 46px, 54px, $serif);
+      }
+    }
+
+    h2 {
+      @include font(300, 20px, 28px, $sans);
+      width: $header-width;
+    }
+
+    p {
+      width: $header-width;
+    }
+
+    nav#sites { display: none; }
+
+    nav#links {
+
+      li {
+        margin: 0 5px;
+
+        a:before {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

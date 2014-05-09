@@ -9,3 +9,7 @@
     color: $color;
   }
 }
+
+@mixin media($width) {
+  @media all and (max-width: $width) { @content; }
+}
