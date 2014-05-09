@@ -1,4 +1,8 @@
+* { box-sizing: border-box; }
+
 body#admin {
+  width: 80%;
+  margin: 50px auto;
 
   h1 {
     font-size: 24px;
@@ -16,6 +20,38 @@ body#admin {
 
     li {
       margin-bottom: 15px;
+    }
+  }
+
+  form {
+
+    h2 {
+      @include font(400, 24px, 32px, $sans);
+      margin: 30px 0;
+    }
+
+    input[type=text], input[type=submit], textarea {
+      @include font(400, 18px, 24px, $serif);
+      width: 100%;
+      padding: 20px;
+      border: 1px solid $gray;
+      outline: none;
+      resize: none;
+    }
+
+    input[type=submit] {
+      background: $highlight;
+      color: $white;
+      cursor: pointer;
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    p {
+
+      &.private, &.file {
+        margin: 30px 0;
+      }
     }
   }
 }

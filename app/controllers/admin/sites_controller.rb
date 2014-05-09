@@ -1,13 +1,5 @@
-class SitesController < ApplicationController
-  http_basic_authenticate_with name: 'ryan', password: ENV['GODDAMNYOURYAN_ADMIN_PASSWORD'], except: [:index, :sitemap]
-
-  def index
-    @sites = Site.active
-    @message = Message.new
-  end
-
-  def admin
-  end
+class Admin::SitesController < Admin::BaseController
+  before_filter :find_site, only: [:edit, :update, :destroy]
 
   def new
     @site = Site.new
@@ -23,20 +15,21 @@ class SitesController < ApplicationController
   end
 
   def edit
-    @site = Site.find params[:id]
   end
 
   def update
-    @site = Site.find params[:id]
     if params[:status]
       @site.update_attributes(status: params[:status])
     else
       @site.update_attributes(params[:site])
     end
-    redirect_to admin_path
+
+    redirect_to admin_root_path, notice: "#{@site.name} updated."
   end
 
   def destroy
+    @site.destroy
+    redirect_to admin_root_path, notice: "#{@site.name} deleted."
   end
 
   def sort
@@ -46,7 +39,9 @@ class SitesController < ApplicationController
     render nothing: true
   end
 
-  def sitemap
+  private
 
+  def find_site
+    @site = Site.find params[:id]
   end
 end

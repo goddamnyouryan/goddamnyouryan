@@ -1,23 +1,5 @@
-class BlogController < ApplicationController
-  http_basic_authenticate_with name: 'ryan', password: 'poophorsebananaschema', except: [:index, :show]
-  before_filter :find_blog, only: [:show, :edit, :update, :destroy]
-  layout 'blog'
-
-  def index
-    @blog = Blog.public.first
-    @blogs = Blog.public
-    @previous = @blog.previous
-    @next = @blog.next
-    respond_to do |format|
-      format.html { render :show }
-      format.rss
-    end
-  end
-
-  def show
-    @previous = @blog.previous
-    @next = @blog.next
-  end
+class Admin::BlogController < Admin::BaseController
+  before_filter :find_blog, only: [:edit, :update, :destroy]
 
   def new
     @blog = Blog.new
@@ -48,12 +30,6 @@ class BlogController < ApplicationController
     @title = @blog.title
     @blog.destroy
 
-    redirect_to admin_path, notice: "#{@title} deleted"
-  end
-
-  private
-
-  def find_blog
-    @blog = Blog.find params[:id]
+    redirect_to admin_root_path, notice: "#{@title} deleted"
   end
 end
