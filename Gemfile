@@ -9,6 +9,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'friendly_id'
 gem 'newrelic_rpm'
+gem 'heroku'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
