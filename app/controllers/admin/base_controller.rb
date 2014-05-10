@@ -3,6 +3,10 @@ class Admin::BaseController < ApplicationController
   layout 'admin'
 
   def index
+    @sites = Site.active
+    @inactive = Site.inactive
+    @blog = Blog.all
+    @messages = Message.all
   end
 
   private

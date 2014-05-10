@@ -5,6 +5,8 @@ class Message < ActiveRecord::Base
 
   validates_presence_of :name, :email, :body
 
+  default_scope order('created_at desc')
+
   private
 
   def send_email_to_ryan
