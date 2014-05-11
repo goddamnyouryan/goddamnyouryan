@@ -76,11 +76,13 @@ ul#work {
 
       h1 {
         @include serif(48px);
+        line-height: 64px;
         padding-top: 100px;
       }
 
       h2 {
         @include sans(15px);
+        line-height: 36px;
         margin-bottom: 25px;
       }
 
