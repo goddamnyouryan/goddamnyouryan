@@ -7,7 +7,8 @@ class Site < ActiveRecord::Base
 
   has_attached_file :photo, styles: { list: "584x326#" },
                             storage: :s3, s3_credentials: "#{Rails.root}/config/s3.yml",
-                            path: ':id/:style'
+                            path: ':id/:style', s3_host_alias: 'assets.goddamnyouryan.com',
+                            url: ':s3_alias_url'
 
   scope :ordered, order('position')
   scope :active, where(status: 'active').ordered

@@ -11,6 +11,7 @@ gem 'friendly_id'
 gem 'newrelic_rpm'
 gem 'heroku'
 gem 'unicorn'
+gem 'asset_sync'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
