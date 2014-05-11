@@ -41,6 +41,6 @@ coffee:
   ul#messages
     - @messages.each do |message|
       li
-        = link_to message.name, "mailto:#{message.email}"
-        br
-        = simple_format message.body
+        h3 = link_to message.name, "mailto:#{message.email}"
+        h4 = message.created_at.strftime('%A, %B %-d, %Y')
+        div = simple_format truncate(message.body, length: 1000)

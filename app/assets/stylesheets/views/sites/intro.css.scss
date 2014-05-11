@@ -6,7 +6,7 @@
   $header-width: 601px;
 
   h1 {
-    @include font(300, 24px, 32px, $sans);
+    @include sans(24px);
     color: $highlight;
     width: $header-width;
     position: relative;
@@ -14,14 +14,14 @@
     margin: 0 auto;
 
     .name {
-      @include font(400, 87px, 102px, $serif);
+      @include serif(87px);
       margin: 10px 0 0 -10px;
       color: $black;
     }
   }
 
   h2 {
-    @include font(300, 24px, 32px, $sans);
+    @include sans(24px);
     color: $highlight;
     width: $header-width;
     margin: 32px auto;
@@ -38,7 +38,7 @@
         margin-bottom: 30px;
 
         a {
-          @include font(300, 11px, 16px, $sans);
+          @include sans(11px);
           @include single-transition(all, 0.2s, ease-in-out);
           text-decoration: none;
           color: $transparent-black;
@@ -72,7 +72,8 @@
   }
 
   p {
-    @include font(300, 15px, 24px, $sans);
+    @include sans(15px);
+    line-height: 24px;
     width: $header-width;
     margin: 0 auto;
 
@@ -127,7 +128,7 @@
       width: $header-width;
 
       .name {
-        @include font(400, 60px, 72px, $serif);
+        @include serif(60px);
         margin-top: 0;
       }
     }
@@ -148,16 +149,16 @@
     $header-width: 300px;
 
     h1 {
-      @include font(300, 20px, 28px, $sans);
+      @include sans(20px);
       width: $header-width;
 
       .name {
-        @include font(400, 46px, 54px, $serif);
+        @include serif(46px);
       }
     }
 
     h2 {
-      @include font(300, 20px, 28px, $sans);
+      @include sans(20px);
       width: $header-width;
     }
 

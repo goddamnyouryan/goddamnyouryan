@@ -36,12 +36,13 @@ ul#work {
           padding-right: 25px;
 
           h2 {
-            @include font(400, 48px, 64px, $serif);
+            @include serif(48px);
             margin: 0 0 25px 0;
           }
 
           p {
-            @include font(300, 15px, 24px, $sans);
+            @include sans(15px);
+            line-height: 24px;
             width: 300px;
           }
         }
@@ -74,12 +75,12 @@ ul#work {
       text-align: center;
 
       h1 {
-        @include font(400, 48px, 64px, $serif);
+        @include serif(48px);
         padding-top: 100px;
       }
 
       h2 {
-        @include font(400, 15px, 36px, $sans);
+        @include sans(15px);
         margin-bottom: 25px;
       }
 
@@ -89,7 +90,7 @@ ul#work {
         text-align: left;
 
         label {
-          @include font(300, 15px, 23px, $sans);
+          @include sans(15px);
           display: block;
           text-align: center;
           color: $error;
@@ -101,7 +102,7 @@ ul#work {
 
 
           input[type=text], input[type=email], textarea {
-            @include font(300, 15px, 24px, $sans);
+            @include sans(15px);
             @include placeholder(lighten($black, 40%));
             outline: none;
             background: $white;
@@ -119,7 +120,7 @@ ul#work {
           }
 
           input[type=submit] {
-            @include font(600, 18px, 28px, $serif);
+            @include serif(18px);
             @include background(linear-gradient(top, darken($highlight, 17%), darken($highlight, 17%) 50%, darken($highlight, 20%) 51%, darken($highlight, 20%) 100%));
             width: 400px;
             padding: 10px 0;
@@ -137,7 +138,7 @@ ul#work {
           }
 
           .notification {
-            @include font(300, 12px, 16px, $sans);
+            @include sans(12px);
             text-align: center;
             padding: 20px;
           }
@@ -252,7 +253,7 @@ ul#work {
           .meta {
 
             h2 {
-              @include font(400, 32px, 40px, $serif);
+              @include serif(32px);
               width: 300px;
               margin: 0 auto 25px;
             }
@@ -286,11 +287,11 @@ ul#work {
         height: 450px;
 
         h1 {
-          @include font(400, 32px, 40px, $serif);
+          @include serif(32px);
         }
 
         h2 {
-          @include font(400, 11px, 17px, $sans);
+          @include sans(11px);
           width: 300px;
           margin: 10px auto;
         }

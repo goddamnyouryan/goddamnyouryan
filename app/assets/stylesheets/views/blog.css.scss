@@ -17,7 +17,7 @@
   }
 
   h1 {
-    @include font(400, 55px, 64px, $serif);
+    @include serif(55px);
     text-align: center;
 
     a {
@@ -31,7 +31,7 @@
   }
 
   h2 {
-    @include font(300, 17px, 24px, $sans);
+    @include sans(17px);
     text-align: center;
   }
 
@@ -43,8 +43,7 @@
     ul li { margin: 0 10% 10px !important; }
 
     h1 {
-      font-size: 24px;
-      @include font(600, 24px, 32px, $serif);
+      @include serif(24px);
     }
 
     .main h2 {
@@ -76,7 +75,7 @@
     }
 
     h1 {
-      @include font(600, 64px, 72px, $serif);
+      @include serif-bold(64px);
       letter-spacing: -1px;
       margin: 0 auto 50px;
       text-align: left;
@@ -90,15 +89,16 @@
     }
 
     h3 {
-      @include font(400, 14px, 20px, $sans);
+      @include sans(14px);
       color: darken($white, 20%);
     }
 
     .body {
-      @include font(400, 20px, 30px, $serif);
+      @include serif(20px);
+      line-height: 30px;
 
       h2 {
-        @include font(600, 24px, 32px, $serif);
+        @include serif-bold(24px);
         text-align: left;
       }
 
@@ -144,7 +144,7 @@
   nav {
 
     ul {
-      @include font(400, 18px, 24px, $serif);
+      @include serif(18px);
     }
 
     li {
