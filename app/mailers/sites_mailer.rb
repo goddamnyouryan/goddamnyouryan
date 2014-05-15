@@ -3,6 +3,6 @@ class SitesMailer < ActionMailer::Base
     @name = name
     @email = email
     @body = body
-    mail(to: 'ryan.macinnes@gmail.com', subject: 'Some asshole is contacting you via your site', from: @email)
+    mail(to: 'ryan.macinnes@gmail.com', subject: 'Website contact form, yo.', from: @email)
   end
 end
