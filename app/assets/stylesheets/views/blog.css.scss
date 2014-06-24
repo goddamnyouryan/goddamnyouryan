@@ -102,6 +102,11 @@
         text-align: left;
       }
 
+      h3 {
+        @include serif(20px);
+        color: $highlight !important;
+      }
+
       img {
         margin: 0;
         width: 100%;
@@ -110,7 +115,7 @@
         &+ p, &+ h2 { margin-top: 1.6em; }
       }
 
-      p, ul {
+      p, ul, h3 {
         margin: 0 auto 1.6em;
       }
 
