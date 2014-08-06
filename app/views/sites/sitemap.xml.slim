@@ -15,6 +15,6 @@ urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'
   - Blog.all.each do |blog|
     url
       loc http://goddamnyouryan.com#{blog_path(blog)}
-      lastmod = Time.now.strftime('%Y-%m-%d')
+      lastmod = blog.updated_at.strftime('%Y-%m-%d')
       changefreq weekly
       priority 0.5
