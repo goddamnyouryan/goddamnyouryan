@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.1.2'
 
-gem 'rails', '3.2.18'
+gem 'rails', '4.1.4'
 gem 'pg'
 gem 'jquery-rails'
 gem 'slim-rails'
@@ -13,15 +13,13 @@ gem 'heroku'
 gem 'unicorn'
 gem 'asset_sync'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'compass-rails'
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'compass-rails'
+gem 'uglifier'
 
 group :development do
-  gem 'debugger'
+  gem 'byebug'
 end
 
 group :production do

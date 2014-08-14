@@ -1,4 +1,4 @@
-Goddamnyouryan::Application.routes.draw do
+Rails.application.routes.draw do
   resources :sites, only: :index
   resources :blog, as: :blog, only: [:index, :show]
   resources :messages, only: :create
@@ -8,7 +8,6 @@ Goddamnyouryan::Application.routes.draw do
       collection { post :sort }
     end
     resources :blog, as: :blog, except: [:index, :show]
-
     root to: 'base#index'
   end
 
