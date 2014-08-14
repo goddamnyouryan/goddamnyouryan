@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     root to: 'base#index'
   end
 
-  match '/sitemap', to: 'sites#sitemap', defaults: { format: :xml }
+  get '/sitemap', to: 'sites#sitemap', defaults: { format: :xml }
 
   root to: 'sites#index'
 end

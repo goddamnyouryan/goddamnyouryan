@@ -6,7 +6,7 @@ class Admin::BlogController < Admin::BaseController
   end
 
   def create
-    @blog = Blog.create params[:blog]
+    @blog = Blog.new blog_params
     if @blog.save
       redirect_to @blog, notice: 'Blog post created.'
     else
@@ -18,8 +18,7 @@ class Admin::BlogController < Admin::BaseController
   end
 
   def update
-    @blog.update_attributes params[:blog]
-    if @blog.save
+    if @blog.update_attributes blog_params
       redirect_to @blog
     else
       render :edit
@@ -31,5 +30,11 @@ class Admin::BlogController < Admin::BaseController
     @blog.destroy
 
     redirect_to admin_root_path, notice: "#{@title} deleted"
+  end
+
+  private
+
+  def blog_params
+    params.require(:blog).permit(:body, :title, :private, :title_image, :dark)
   end
 end

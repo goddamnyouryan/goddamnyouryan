@@ -3,8 +3,8 @@ class BlogController < ApplicationController
   layout 'blog'
 
   def index
-    @blog = Blog.public.first
-    @blogs = Blog.public
+    @blog = Blog.public_posts.first
+    @blogs = Blog.public_posts
     @previous = @blog.previous
     @next = @blog.next
     respond_to do |format|

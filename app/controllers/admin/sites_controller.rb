@@ -6,7 +6,7 @@ class Admin::SitesController < Admin::BaseController
   end
 
   def create
-    @site = Site.create params[:site]
+    @site = Site.new site_params
     if @site.save
       redirect_to admin_path
     else
@@ -21,7 +21,7 @@ class Admin::SitesController < Admin::BaseController
     if params[:status]
       @site.update_attributes(status: params[:status])
     else
-      @site.update_attributes(params[:site])
+      @site.update_attributes site_params
     end
 
     redirect_to admin_root_path, notice: "#{@site.name} updated."
@@ -43,5 +43,9 @@ class Admin::SitesController < Admin::BaseController
 
   def find_site
     @site = Site.find params[:id]
+  end
+
+  def site_params
+    params.require(:site).permit(:description, :name, :order, :status, :url, :photo, :background_color, :text_color, :dark)
   end
 end
