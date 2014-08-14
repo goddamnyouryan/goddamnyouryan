@@ -75,8 +75,9 @@
     }
 
     h1 {
-      @include serif-bold(64px);
-      letter-spacing: -1px;
+      @include sans(64px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
       margin: 0 auto 50px;
       text-align: left;
 
@@ -149,12 +150,17 @@
   nav {
 
     ul {
-      @include serif(18px);
+      @include sans(18px);
     }
 
     li {
       list-style: disc;
       margin: 0 50px;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: 800;
     }
   }
 
