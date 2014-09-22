@@ -8,7 +8,7 @@ class Admin::SitesController < Admin::BaseController
   def create
     @site = Site.new site_params
     if @site.save
-      redirect_to admin_path
+      redirect_to admin_root_path
     else
       redirect_to new_site_path
     end
@@ -34,7 +34,7 @@ class Admin::SitesController < Admin::BaseController
 
   def sort
     params[:site].each_with_index do |id, index|
-      Site.update_all({position: index + 1}, { id: id })
+      Site.find(id).update_attribute :position, index + 1
     end
     render nothing: true
   end
@@ -42,7 +42,7 @@ class Admin::SitesController < Admin::BaseController
   private
 
   def find_site
-    @site = Site.find params[:id]
+    @site = Site.friendly.find params[:id]
   end
 
   def site_params
